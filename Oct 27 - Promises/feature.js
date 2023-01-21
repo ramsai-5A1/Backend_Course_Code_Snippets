@@ -64,7 +64,6 @@ downloadPromise.then(function processDownload(value) {
     return obj;
 })
 .then(function processUpload(value) {
-    console.log("Write completed");
     let obj = uploadFileToURL(value, "www.drive.google.com");
     return obj;
 });
@@ -72,6 +71,6 @@ console.log("ended");
 
 /*
  As compared with callbacks design which we've followed earlier, this promise based design is eliminating
-inversion of control, as we are not giving the control of function to someone else.
+inversion of control, as we are not giving the control of function to someone else. But still we are facing callback hell (i.e promise hell in this case)
 */
 
